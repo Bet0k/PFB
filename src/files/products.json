@@ -1,0 +1,57 @@
+[
+	{
+		"id": 2,
+		"title": "ñBrownié",
+		"description": "Brownie bien chocolatosoññññ",
+		"code": "5678",
+		"price": null,
+		"status": true,
+		"stock": "5",
+		"category": "Tortasña",
+		"thumbnail": null
+	},
+	{
+		"id": 3,
+		"title": "ñBrownié",
+		"description": "Brownie bien chocolatosoññññ",
+		"code": "5678",
+		"price": 2000,
+		"status": true,
+		"stock": "5",
+		"category": "Tortasña",
+		"thumbnail": null
+	},
+	{
+		"id": 4,
+		"title": "ñBrownié",
+		"description": "Brownie bien chocolatosoññññ",
+		"code": "5678",
+		"price": 2000,
+		"status": true,
+		"stock": "5",
+		"category": "Tortasña",
+		"thumbnail": null
+	},
+	{
+		"id": 5,
+		"title": "ñBrownié",
+		"description": "Brownie bien chocolatosoññññ",
+		"code": "5678",
+		"price": 2000,
+		"status": true,
+		"stock": "5",
+		"category": "Tortasña",
+		"thumbnail": "file_9680_0611242024_194750.jpg"
+	},
+	{
+		"id": 6,
+		"title": "ñBrownié",
+		"description": "Brownie bien chocolatosoññññ",
+		"code": "5678",
+		"price": 2000,
+		"status": true,
+		"stock": "5",
+		"category": "Tortasña",
+		"thumbnail": "file_3512_0611242024_195149.jpg"
+	}
+]
