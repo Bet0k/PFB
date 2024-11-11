@@ -2,7 +2,7 @@ import { readJsonFile, writeJsonFile } from "../utils/fileHandler.js";
 import paths from "../utils/paths.js";
 import { generateId } from "../utils/collectionHandler.js";
 import { covertToBool } from "../utils/converter.js";
-import ErrorManager from "./ErrorMangaer.js";
+import ErrorManager from "./ErrorManager.js";
 
 export default class ProductManager {
     #jsonFileName;
@@ -75,6 +75,11 @@ export default class ProductManager {
             const { title, description, code, price, status, stock, category } = data;
             const productFound = await this.getOneById(id);
             const newThumbnail = file?.filename;
+            if(price){
+                if (isNaN(price)){
+                    throw new ErrorManager("El precio debe ser numérico.", 400);
+                }
+            }
 
             const product = {
                 id: productFound.id,

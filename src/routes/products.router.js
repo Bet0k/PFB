@@ -12,7 +12,6 @@ router.get("/", async (req, res) => {
     } catch (error) {
         res.status(error.code || 500).json({ status:  "error", message: error.message });
     }
-
 });
 
 router.get("/:pid", async (req, res) => {
