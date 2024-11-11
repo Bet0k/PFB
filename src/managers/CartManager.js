@@ -86,7 +86,9 @@ export default class CartManager{
             const productIndex = cartFound.products.findIndex(
                 (item) => item.product === Number(productId),
             );
-
+            if(quantity <= 0){
+                throw new ErrorManager("La cantidad del producto que estás intentando agregar es menor o igual a 0. Para agregar una cantidad, por favor, que sea mayor a 0.", 400);
+            }
             if (productIndex >= 0) {
                 cartFound.products[productIndex].quantity += quantity;
             } else {
