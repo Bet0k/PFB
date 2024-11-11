@@ -1,57 +1,46 @@
 [
 	{
 		"id": 2,
-		"title": "ñBrownié",
-		"description": "Brownie bien chocolatosoññññ",
-		"code": "5678",
-		"price": null,
-		"status": true,
+		"title": "gjhghjhg",
+		"description": "Cheesecake",
+		"code": "123456789",
+		"price": 123,
+		"status": false,
 		"stock": "5",
-		"category": "Tortasña",
-		"thumbnail": null
+		"category": "Tortas",
+		"thumbnail": "file_4617_0811242024_175146.jpg"
 	},
 	{
 		"id": 3,
-		"title": "ñBrownié",
-		"description": "Brownie bien chocolatosoññññ",
-		"code": "5678",
-		"price": 2000,
-		"status": true,
+		"title": "gjhghjhg",
+		"description": "Cheesecake",
+		"code": "123456789",
+		"price": 123123,
+		"status": false,
 		"stock": "5",
-		"category": "Tortasña",
-		"thumbnail": null
+		"category": "Tortas",
+		"thumbnail": "file_4115_0811242024_175202.jpg"
 	},
 	{
 		"id": 4,
-		"title": "ñBrownié",
-		"description": "Brownie bien chocolatosoññññ",
-		"code": "5678",
-		"price": 2000,
+		"title": "Andrea",
+		"description": "Cheesecake",
+		"code": "123456789",
+		"price": 123123,
 		"status": true,
 		"stock": "5",
-		"category": "Tortasña",
+		"category": "Tortas",
 		"thumbnail": null
 	},
 	{
 		"id": 5,
-		"title": "ñBrownié",
-		"description": "Brownie bien chocolatosoññññ",
-		"code": "5678",
-		"price": 2000,
+		"title": "Werner",
+		"description": "Cheesecake",
+		"code": "123456789",
+		"price": 123123,
 		"status": true,
 		"stock": "5",
-		"category": "Tortasña",
-		"thumbnail": "file_9680_0611242024_194750.jpg"
-	},
-	{
-		"id": 6,
-		"title": "ñBrownié",
-		"description": "Brownie bien chocolatosoññññ",
-		"code": "5678",
-		"price": 2000,
-		"status": true,
-		"stock": "5",
-		"category": "Tortasña",
-		"thumbnail": "file_3512_0611242024_195149.jpg"
+		"category": "Tortas",
+		"thumbnail": null
 	}
 ]
