@@ -25,8 +25,13 @@ router.get("/:pid", async (req, res) => {
 
 router.post("/add", async (req, res) => {
     try {
-        const cart = await cartManager.insertOne(req.body, req.file);
-        res.status(201).json({ status:  "success", payload: cart });
+        if(!req.body || Object.keys(req.body).length === 0 || !req.body.products){
+            res.status(400).json({ status: "error", message: "El carrito no puede crearse sin productos." });
+        }
+        else{
+            const cart = await cartManager.insertOne(req.body);
+            res.status(201).json({ status:  "success", payload: cart });
+        }
     } catch (error) {
         res.status(error.code || 500).json({ status:  "error", message: error.message });
     }
