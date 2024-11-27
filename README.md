@@ -18,3 +18,16 @@ Inicia el servidor:
 *npm run dev*
 
 Accede a la aplicación desde el navegador en http://localhost: + puerto configurado.
+
+Rutas para acceder desde localhost:
+
+http://localhost:8080/products --> Lista de productos en tabla
+
+http://localhost:8080/ --> Productos con botón de recarga
+
+http://localhost:8080/realTimeProducts --> Lista de productos actualizandose en tiempo real
+
+
+http://localhost:8080/products/pushProduct --> Añadir un nuevo producto
+
+
