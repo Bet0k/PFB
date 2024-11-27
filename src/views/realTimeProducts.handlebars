@@ -1,0 +1,62 @@
+<header>
+    <h1>Inicio</h1>
+</header>
+
+<main>
+    <section>
+        <h3>Productos Actualizados sin recargar</h3>
+        <div>
+            <ul id="products-list"></ul>
+        </div>
+    </section>
+    <section>
+        <h3>Formulario para añadir un nuevo producto</h3>
+        <form id="products-form">
+            <div>
+        <div>
+            <label for="title">Título</label>
+            <input type="text" name="title" id="title">
+        </div>
+        <div>
+            <label for="description">Descripción</label>
+            <input type="text" name="description" id="description">
+        </div>
+        <div>
+            <label for="code">Código</label>
+            <input type="text" name="code" id="code">
+        </div>
+        <div>
+            <label for="price">Precio</label>
+            <input type="number" name="price" id="price">
+        </div>
+        <div>
+            ¿Está activo?
+            <input type="checkbox" name="status">
+        </div>
+        <div>
+            <label for="stock">Stock</label>
+            <input type="text" name="stock" id="stock">
+        </div>
+        <div>
+            <label for="category">Categoría</label>
+            <input type="text" name="category" id="category">
+        </div>
+        <input type="submit" value="Guardar">
+    </form>
+        <section>
+        <h3>Eliminar Producto con su ID</h3>
+        <div>
+            <input type="number" id="input-product-id">
+            <button id="btn-delete-product">Eliminar Producto</button>
+        </div>
+    </section>
+</div>
+        </form>
+    </section>
+    <p id="error-message" style="color: red"></p>
+
+
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/api/public/js/products.socket.js"></script>

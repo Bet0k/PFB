@@ -51,6 +51,10 @@ export default class ProductManager {
             else if (isNaN(price)){
                 throw new ErrorManager("El precio debe ser numérico.", 400);
             }
+            else if(isNaN(stock) || stock < 0) {
+                throw new ErrorManager("El stock debe ser numérico.", 400);
+            }
+
             const product = {
                 id: generateId(await this.getAll()),
                 title,
