@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "84e81991-6fbf-408f-9870-dfd3ccd8d334",
+		"name": "CursoBE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23861177"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GetProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "limit",
+								"value": "5",
+								"disabled": true
+							},
+							{
+								"key": "sort",
+								"value": "desc",
+								"disabled": true
+							},
+							{
+								"key": "title",
+								"value": "ASD",
+								"disabled": true
+							},
+							{
+								"key": "page",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/6759eb1fa1a16c2fe92fe3e4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"6759eb1fa1a16c2fe92fe3e4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Medias Adidas x5\",\r\n    \"description\": \"Paquete de 5 medias Adidas\",\r\n    \"code\": \"10\",\r\n    \"price\": 27000,\r\n    \"status\": true,\r\n    \"stock\": 8,\r\n    \"category\": \"Medias\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/newProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"newProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"asd\",\r\n    \"description\": \"PRUEBA 6 MONGOOSE DES\",\r\n    \"code\": \"6\",\r\n    \"price\": 15000,\r\n    \"status\": true,\r\n    \"stock\": 15,\r\n    \"category\": \"PRUEBAS 6\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/6759d7cebd6a96c2006b7549",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"6759d7cebd6a96c2006b7549"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/6759eb1fa1a16c2fe92fe3e4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"6759eb1fa1a16c2fe92fe3e4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "GetCart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCartByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart/67642c9420da33f7878f834a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"67642c9420da33f7878f834a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"products\": [\n    {\n      \"product\": \"6759e0865d0d756f4a4db7bc\",\n      \"quantity\": 2\n    },\n    {\n      \"product\": \"6759d7cebd6a96c2006b7549\",\n      \"quantity\": 1\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/newCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"newCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProductsToCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantity\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cart/675a2c4900009d6f45666921/675af9fa81cadb60787513b1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"675a2c4900009d6f45666921",
+								"675af9fa81cadb60787513b1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart/6759ed9aa1a16c2fe92fe3fb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"6759ed9aa1a16c2fe92fe3fb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ClearCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cart/675a2c4900009d6f45666921/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"675a2c4900009d6f45666921",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
