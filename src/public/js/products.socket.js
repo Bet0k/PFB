@@ -1,18 +1,12 @@
 const socket = io();
 
-socket.on("connect", () =>{
-    console.log("Conetado al servidor");
+socket.on("connect", () => {
+    console.log("Conectado al servidor");
 });
 
-socket.on("disconnect", () =>{
+socket.on("disconnect", () => {
     console.log("Desconectado del servidor");
 });
-
-const productsList = document.getElementById("products-list");
-const productsForm = document.getElementById("products-form");
-const errorMessage = document.getElementById("error-message");
-const inputProductID = document.getElementById("input-product-id");
-const btnDeleteProduct = document.getElementById("btn-delete-product");
 
 const escapeHTML = (str) => {
     return String(str)
@@ -23,8 +17,10 @@ const escapeHTML = (str) => {
         .replace(/'/g, "&#039;");
 };
 
-socket.on("products-list", (data) => {
-    const products = data.products || [];
+const handleProductsList = (data) => {
+    console.log(data);
+    const products = data.products.payload || [];
+    const productsList = document.getElementById("products-list");
     productsList.innerHTML = `
         <table>
             <thead>
@@ -42,7 +38,7 @@ socket.on("products-list", (data) => {
             <tbody>
                 ${products.map((product) => `
                     <tr>
-                        <td>${escapeHTML(product.id)}</td>
+                        <td>${escapeHTML(product._id)}</td>
                         <td>${escapeHTML(product.title)}</td>
                         <td>${escapeHTML(product.description)}</td>
                         <td>${escapeHTML(product.code)}</td>
@@ -55,13 +51,17 @@ socket.on("products-list", (data) => {
             </tbody>
         </table>
     `;
-});
+};
 
-productsForm.addEventListener("submit", (event) =>{
+
+socket.on("products-list", handleProductsList);
+
+const handleInsertProduct = (event) => {
     event.preventDefault();
     const form = event.target;
     const formData = new FormData(form);
 
+    const errorMessage = document.getElementById("error-message");
     errorMessage.innerText = "";
     form.reset();
 
@@ -74,18 +74,32 @@ productsForm.addEventListener("submit", (event) =>{
         stock: formData.get("stock"),
         category: formData.get("category"),
     });
-});
+};
 
-socket.on("error-message", (data) =>{
+const productsForm = document.getElementById("products-form");
+productsForm.addEventListener("submit", handleInsertProduct);
+
+socket.on("error-message", (data) => {
+    const errorMessage = document.getElementById("error-message");
     errorMessage.innerText = data.message;
 });
 
-btnDeleteProduct.addEventListener("click", () =>{
+const handleDeleteProduct = () => {
+    const inputProductID = document.getElementById("input-product-id");
+    const errorMessage = document.getElementById("error-message");
     const id = inputProductID.value;
-    inputProductID.innerText = "";
+    inputProductID.value = "";
     errorMessage.innerText = "";
 
-    if(id > 0) {
-        socket.emit("delete-product", { id });
+    if (id) {
+        socket.emit("delete-product", {
+            id
+        });
+    } else {
+        errorMessage.innerText = "Por favor, ingresa un ID válido.";
     }
-});
+};
+
+
+const btnDeleteProduct = document.getElementById("btn-delete-product");
+btnDeleteProduct.addEventListener("click", handleDeleteProduct);

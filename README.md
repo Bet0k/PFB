@@ -21,13 +21,10 @@ Accede a la aplicación desde el navegador en http://localhost: + puerto configu
 
 Rutas para acceder desde localhost:
 
-http://localhost:8080/products --> Lista de productos en tabla
-
-http://localhost:8080/ --> Productos con botón de recarga
+http://localhost:8080/ --> Añadir al carrito, productos
 
 http://localhost:8080/realTimeProducts --> Lista de productos actualizandose en tiempo real
 
-
 http://localhost:8080/products/pushProduct --> Añadir un nuevo producto
 
-
+http://localhost:8080/products --> Lista de todos los productos

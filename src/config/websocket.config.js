@@ -23,13 +23,14 @@ export const config = (httpServer) => {
 
         socket.on("delete-product", async (data) => {
             try {
-                await productManager.deleteOneById(Number(data.id));
-
+                await productManager.deleteOneById(data.id);
+        
                 socketServer.emit("products-list", { products: await productManager.getAll() });
             } catch (error) {
                 socketServer.emit("error-message", { message: error.message });
             }
         });
+        
 
         socket.on("disconnect", () => {
             console.log("Se desconecto un cliente");

@@ -1,37 +1,35 @@
 <h1>Añadí tu producto</h1>
-
 <div>
-    <form action = "/api/products/add" method = "post">
-        <div>
-            <label for="title">Título</label>
-            <input type="text" name="title" id="title">
-        </div>
-        <div>
-            <label for="description">Descripción</label>
-            <input type="text" name="description" id="description">
-        </div>
-        <div>
-            <label for="code">Código</label>
-            <input type="text" name="code" id="code">
-        </div>
-        <div>
-            <label for="price">Precio</label>
-            <input type="number" name="price" id="price">
-        </div>
-        <div>
-            <label for="status">Estado</label>
-            <input type="text" name="status" id="status">
-        </div>
-        <div>
-            <label for="stock">Stock</label>
-            <input type="text" name="stock" id="stock">
-        </div>
-        <div>
-            <label for="category">Categoría</label>
-            <input type="text" name="category" id="category">
-        </div>
-        <input type="submit" value="Guardar">
-    </form>
+   <form action = "/api/products/newProduct" method = "post">
+      <div>
+         <label for="title">Título</label>
+         <input type="text" name="title" id="title">
+      </div>
+      <div>
+         <label for="description">Descripción</label>
+         <input type="text" name="description" id="description">
+      </div>
+      <div>
+         <label for="code">Código</label>
+         <input type="text" name="code" id="code">
+      </div>
+      <div>
+         <label for="price">Precio</label>
+         <input type="number" name="price" id="price">
+      </div>
+      <div>
+         <label for="status">Estado</label>
+         <input type="text" name="status" id="status">
+      </div>
+      <div>
+         <label for="stock">Stock</label>
+         <input type="text" name="stock" id="stock">
+      </div>
+      <div>
+         <label for="category">Categoría</label>
+         <input type="text" name="category" id="category">
+      </div>
+      <input type="submit" value="Guardar">
+   </form>
 </div>
-
 <p>Hace click <a href="/products">acá</a> para ver la lista de productos.</p>

@@ -1,10 +1,14 @@
-import { Router } from "express";
+import {
+    Router
+} from "express";
 
 const router = Router();
 
 router.get("/", async (req, res) => {
     try {
-        res.render("home", { title: "Inicio" });
+        res.render("home", {
+            title: "Inicio"
+        });
     } catch (error) {
         res.status(500).send(`<h1>Error</h1><h3>${error.message}</h3>`);
     }
@@ -12,7 +16,9 @@ router.get("/", async (req, res) => {
 
 router.get("/realTimeProducts", async (req, res) => {
     try {
-        res.render("realTimeProducts", { title: "Productos en tiempo real" });
+        res.render("realTimeProducts", {
+            title: "Productos en tiempo real"
+        });
     } catch (error) {
         res.status(500).send(`<h1>Error</h1><h3>${error.message}</h3>`);
     }
